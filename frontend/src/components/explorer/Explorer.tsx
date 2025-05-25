@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Filter, MapPin, Star, Calendar, Users, Plane } from 'lucide-react';
+import { getDestinations } from '../../services/api';
 
 // Datos mockeados
 const mockDestinations = [
@@ -77,6 +78,11 @@ const mockDestinations = [
   }
 ];
 
+const data = await getDestinations()
+
+console.log(data);
+
+
 const regions = ["Todas", "Caribe Mexicano", "Bajío", "Veracruz", "Sur"];
 const types = ["Todos", "playa", "cultura", "montaña", "naturaleza"];
 const priceRanges = [
@@ -86,7 +92,7 @@ const priceRanges = [
   { label: "Premium (> $3000)", min: 3000, max: Infinity }
 ];
 
-export default function Explorer() {
+function Explorer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("Todas");
   const [selectedType, setSelectedType] = useState("Todos");
@@ -337,3 +343,5 @@ export default function Explorer() {
     </div>
   );
 }
+
+export default Explorer
