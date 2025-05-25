@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "name": "Guadalajara",
@@ -184,3 +185,191 @@
         "slug": "hidalgo"
     }
 ]
+=======
+[
+    {
+        "name": "Guadalajara",
+        "country": "Mexico",
+        "description": "Known for its mariachi music and tequila production.",
+        "slug": "guadalajara"
+    },
+    {
+        "name": "Monterrey",
+        "country": "Mexico",
+        "description": "A major industrial hub with a modern skyline.",
+        "slug": "monterrey"
+    },
+    {
+        "name": "Ciudad de México",
+        "country": "Mexico",
+        "description": "A vibrant city with rich history and culture.",
+        "slug": "ciudad-de-mexico"
+    },
+    {
+        "name": "Cancún",
+        "country": "Mexico",
+        "description": "A popular tourist destination known for its beaches and nightlife.",
+        "slug": "cancun"
+    },
+    {
+        "name": "Tijuana",
+        "country": "Mexico",
+        "description": "A border city known for its cultural diversity and nightlife.",
+        "slug": "tijuana"
+    },
+    {
+        "name": "Puebla",
+        "country": "Mexico",
+        "description": "Famous for its culinary heritage and colonial architecture.",
+        "slug": "puebla"
+    },
+    {
+        "name": "Mérida",
+        "country": "Mexico",
+        "description": "Known for its Mayan heritage and colonial buildings.",
+        "slug": "merida"
+    },
+    {
+        "name": "León",
+        "country": "Mexico",
+        "description": "Renowned for its leather industry and vibrant culture.",
+        "slug": "leon"
+    },
+    {
+        "name": "Querétaro",
+        "country": "Mexico",
+        "description": "A historical city with a well-preserved colonial center.",
+        "slug": "queretaro"
+    },
+    {
+        "name": "San Luis Potosí",
+        "country": "Mexico",
+        "description": "Known for its rich history and diverse landscapes.",
+        "slug": "san-luis-potosi"
+    },
+    {
+        "name": "Veracruz",
+        "country": "Mexico",
+        "description": "A coastal city with a rich cultural heritage.",
+        "slug": "veracruz"
+    },
+    {
+        "name": "Chihuahua",
+        "country": "Mexico",
+        "description": "Famous for its desert landscapes and indigenous cultures.",
+        "slug": "chihuahua"
+    },
+    {
+        "name": "Toluca",
+        "country": "Mexico",
+        "description": "Known for its colonial architecture and proximity to Mexico City.",
+        "slug": "toluca"
+    },
+    {
+        "name": "Morelia",
+        "country": "Mexico",
+        "description": "A city with a rich colonial history and beautiful architecture.",
+        "slug": "morelia"
+    },
+    {
+        "name": "Acapulco",
+        "country": "Mexico",
+        "description": "A famous beach resort city known for its nightlife.",
+        "slug": "acapulco"
+    },
+    {
+        "name": "Aguascalientes",
+        "country": "Mexico",
+        "description": "Known for its hot springs and cultural festivals.",
+        "slug": "aguascalientes"
+    },
+    {
+        "name": "Saltillo",
+        "country": "Mexico",
+        "description": "A city with a rich history and vibrant arts scene.",
+        "slug": "saltillo"
+    },
+    {
+        "name": "Culiacán",
+        "country": "Mexico",
+        "description": "Known for its agricultural production and cultural festivals.",
+        "slug": "culiacan"
+    },
+    {
+        "name": "Torreón",
+        "country": "Mexico",
+        "description": "An industrial city known for its textile industry.",
+        "slug": "torreon"
+    },
+    {
+        "name": "Durango",
+        "country": "Mexico",
+        "description": "Famous for its colonial architecture and natural beauty.",
+        "slug": "durango"
+    },
+    {
+        "name": "Hermosillo",
+        "country": "Mexico",
+        "description": "The capital of Sonora, known for its desert landscapes.",
+        "slug": "hermosillo"
+    },
+    {
+        "name": "Mazatlán",
+        "country": "Mexico",
+        "description": "A coastal city known for its beaches and seafood.",
+        "slug": "mazatlan"
+    },
+    {
+        "name": "Tepic",
+        "country": "Mexico",
+        "description": "Known for its natural beauty and cultural heritage.",
+        "slug": "tepic"
+    },
+    {
+        "name": "Villahermosa",
+        "country": "Mexico",
+        "description": "The capital of Tabasco, known for its parks and museums.",
+        "slug": "villahermosa"
+    },
+    {
+        "name": "Tuxtla Gutiérrez",
+        "country": "Mexico",
+        "description": "The capital of Chiapas, known for its natural beauty.",
+        "slug": "tuxtla-gutierrez"
+    },
+    {
+        "name": "Chetumal",
+        "country": "Mexico",
+        "description": "A coastal city known for its Mayan heritage.",
+        "slug": "chetumal"
+    },
+    {
+        "name": "La Paz",
+        "country": "Mexico",
+        "description": "The capital of Baja California Sur, known for its beaches.",
+        "slug": "la-paz"
+    },
+    {
+        "name": "San Cristóbal de las Casas",
+        "country": "Mexico",
+        "description": "Known for its indigenous cultures and colonial architecture.",
+        "slug": "san-cristobal-de-las-casas"
+    },
+    {   "name": "Queretaro",
+        "country": "Mexico",
+        "description": "Known for its colonial architecture and vibrant culture.",
+        "slug": "queretaro"
+    },
+    {    "name": "Oaxaca",
+        "country": "Mexico",
+        "description": "Famous for its indigenous cultures and culinary traditions.",
+        "slug": "oaxaca"
+    },
+    {
+        "name": "Hidalgo",
+        "country": "Mexico",
+        "description": "A state with a rich history and diverse culture.",
+        "slug": "hidalgo"
+    }
+]
+>>>>>>> b327c882a0657d81db6a6071791f34401482a7a8
