@@ -1,375 +1,259 @@
-<<<<<<< HEAD
 [
+  {
+    "nombre": "Aeropuerto Internacional de Cancún",
+    "codigo_iata": "CUN",
+    "slug": "cancun",
+    "estado": "Quintana Roo",
+    "descripcion": "Uno de los destinos turísticos más populares de México, conocido por sus playas de arena blanca y aguas cristalinas.",
+    "imagenes": [
+      "https://example.com/images/cancun1.jpg",
+      "https://example.com/images/cancun2.jpg"
+    ],
+    "precio_ida": 329,
+    "precio_vuelta": 329,
+    "enlace": "https://www.vivaaerobus.com/en-mx/flights-from-felipe-angeles-cdmx-to-cancun"
+  },
+  {
+    "nombre": "Aeropuerto Internacional de Guadalajara",
+    "codigo_iata": "GDL",
+    "slug": "guadalajara",
+    "estado": "Jalisco",
+    "descripcion": "Centro cultural y económico del occidente de México, famoso por el mariachi y el tequila.",
+    "imagenes": [
+      "https://example.com/images/guadalajara1.jpg",
+      "https://example.com/images/guadalajara2.jpg"
+    ],
+    "precio_ida": 248,
+    "precio_vuelta": 248,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-guadalajara"
+  },
+  {
+    "nombre": "Aeropuerto Internacional de Monterrey",
+    "codigo_iata": "MTY",
+    "slug": "monterrey",
+    "estado": "Nuevo León",
+    "descripcion": "Importante centro industrial y de negocios en el norte de México.",
+    "imagenes": [
+      "https://example.com/images/monterrey1.jpg",
+      "https://example.com/images/monterrey2.jpg"
+    ],
+    "precio_ida": 339,
+    "precio_vuelta": 339,
+    "enlace": "https://www.vivaaerobus.com/en-mx/flights-from-felipe-angeles-cdmx-to-monterrey"
+  },
+  {
+    "nombre": "Aeropuerto Internacional de Tijuana",
+    "codigo_iata": "TIJ",
+    "slug": "tijuana",
+    "estado": "Baja California",
+    "descripcion": "Ciudad fronteriza con acceso directo a San Diego, California, y un importante punto de conexión internacional.",
+    "imagenes": [
+      "https://example.com/images/tijuana1.jpg",
+      "https://example.com/images/tijuana2.jpg"
+    ],
+    "precio_ida": 559,
+    "precio_vuelta": 559,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-tijuana"
+  },
+  {
+    "nombre": "Aeropuerto Internacional de Los Cabos",
+    "codigo_iata": "SJD",
+    "slug": "los-cabos",
+    "estado": "Baja California Sur",
+    "descripcion": "Destino turístico de renombre mundial, conocido por sus playas, resorts de lujo y vida nocturna.",
+    "imagenes": [
+      "https://example.com/images/loscabos1.jpg",
+      "https://example.com/images/loscabos2.jpg"
+    ],
+    "precio_ida": 899,
+    "precio_vuelta": 899,
+    "enlace": "https://www.vivaaerobus.com/en-mx/flights-from-felipe-angeles-cdmx-to-los-cabos"
+  },
+  {
+    "nombre": "Aeropuerto Internacional de Puerto Vallarta",
+    "codigo_iata": "PVR",
+    "slug": "puerto-vallarta",
+    "estado": "Jalisco",
+    "descripcion": "Ciudad costera famosa por su malecón, playas y ambiente artístico.",
+    "imagenes": [
+      "https://example.com/images/puertovallarta1.jpg",
+      "https://example.com/images/puertovallarta2.jpg"
+    ],
+    "precio_ida": 799,
+    "precio_vuelta": 799,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-puerto-vallarta"
+  },
+  {
+    "nombre": "Aeropuerto Internacional de Mérida",
+    "codigo_iata": "MID",
+    "slug": "merida",
+    "estado": "Yucatán",
+    "descripcion": "Capital cultural del sureste mexicano, rica en historia maya y arquitectura colonial.",
+    "imagenes": [
+      "https://example.com/images/merida1.jpg",
+      "https://example.com/images/merida2.jpg"
+    ],
+    "precio_ida": 699,
+    "precio_vuelta": 699,
+    "enlace": "https://www.vivaaerobus.com/en-mx/flights-from-felipe-angeles-cdmx-to-merida"
+  },
+  {
+    "nombre": "Aeropuerto Internacional de Culiacán",
+    "codigo_iata": "CUL",
+    "slug": "culiacan",
+    "estado": "Sinaloa",
+    "descripcion": "Centro agrícola e industrial del noroeste de México, con creciente desarrollo urbano.",
+    "imagenes": [
+      "https://example.com/images/culiacan1.jpg",
+      "https://example.com/images/culiacan2.jpg"
+    ],
+    "precio_ida": 649,
+    "precio_vuelta": 649,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-culiacan"
+  },
     {
-        "name": "Guadalajara",
-        "country": "Mexico",
-        "description": "Known for its mariachi music and tequila production.",
-        "slug": "guadalajara"
-    },
+    "id": "guadalajara",
+    "nombre": "Guadalajara",
+    "estado": "Jalisco",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/49/Aeropuerto_de_Guadalajara.jpg",
+      "https://cdn.getyourguide.com/img/location/5ffeb2f11bbf1.jpeg/99.jpg"
+    ],
+    "precio_ida": 750,
+    "precio_vuelta": 750,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-guadalajara"
+  },
+  {
+    "id": "monterrey",
+    "nombre": "Monterrey",
+    "estado": "Nuevo León",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Aeropuerto_de_Monterrey.jpg",
+      "https://www.nl.gob.mx/sites/default/files/estatal/2020-08/aeropuerto_internacional_mty.jpg"
+    ],
+    "precio_ida": 680,
+    "precio_vuelta": 680,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-monterrey"
+  },
+  {
+    "id": "merida",
+    "nombre": "Mérida",
+    "estado": "Yucatán",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/60/Aeropuerto_de_M%C3%A9rida.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-s/1a/36/2c/9d/aeropuerto-internacional.jpg"
+    ],
+    "precio_ida": 850,
+    "precio_vuelta": 850,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-merida"
+  },
+  {
+    "id": "tijuana",
+    "nombre": "Tijuana",
+    "estado": "Baja California",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/70/Aeropuerto_de_Tijuana.jpg",
+      "https://cdn.vox-cdn.com/thumbor/ycIVbyaxYchttRJ2yrzQY_hwwyE=/0x0:2048x1365/1200x800/filters:focal(857x505:1191x839)/cdn.vox-cdn.com/uploads/chorus_image/image/67751672/tijuana_airport_terminal.0.jpg"
+    ],
+    "precio_ida": 720,
+    "precio_vuelta": 720,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-tijuana"
+  },
     {
-        "name": "Monterrey",
-        "country": "Mexico",
-        "description": "A major industrial hub with a modern skyline.",
-        "slug": "monterrey"
-    },
+    "id": "cancun",
+    "nombre": "Cancún",
+    "estado": "Quintana Roo",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9d/Cancun_International_Airport_2015.JPG",
+      "https://cdn.getyourguide.com/img/location/5ffeb36031f8e.jpeg/99.jpg"
+    ],
+    "precio_ida": 900,
+    "precio_vuelta": 900,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-cancun"
+  },
+  {
+    "id": "morelia",
+    "nombre": "Morelia",
+    "estado": "Michoacán",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Aeropuerto_Internacional_de_Morelia.jpg",
+      "https://aeropuertosdelmundo.com/wp-content/uploads/2018/10/morelia-airport-terminal-building-2.jpg"
+    ],
+    "precio_ida": 620,
+    "precio_vuelta": 620,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-morelia"
+  },
+  {
+    "id": "puebla",
+    "nombre": "Puebla",
+    "estado": "Puebla",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/8c/Aeropuerto_de_Puebla.jpg",
+      "https://www.aviacionnews.com/wp-content/uploads/2022/01/Aeropuerto-internacional-Hermanos-Serd%C3%A1n.jpg"
+    ],
+    "precio_ida": 640,
+    "precio_vuelta": 640,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-puebla"
+  },
+  {
+    "id": "oaxaca",
+    "nombre": "Oaxaca",
+    "estado": "Oaxaca",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/77/Aeropuerto_de_Oaxaca.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-s/1a/36/2c/9d/aeropuerto-internacional.jpg"
+    ],
+    "precio_ida": 700,
+    "precio_vuelta": 700,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-oaxaca"
+  },
     {
-        "name": "Ciudad de México",
-        "country": "Mexico",
-        "description": "A vibrant city with rich history and culture.",
-        "slug": "ciudad-de-mexico"
-    },
-    {
-        "name": "Cancún",
-        "country": "Mexico",
-        "description": "A popular tourist destination known for its beaches and nightlife.",
-        "slug": "cancun"
-    },
-    {
-        "name": "Tijuana",
-        "country": "Mexico",
-        "description": "A border city known for its cultural diversity and nightlife.",
-        "slug": "tijuana"
-    },
-    {
-        "name": "Puebla",
-        "country": "Mexico",
-        "description": "Famous for its culinary heritage and colonial architecture.",
-        "slug": "puebla"
-    },
-    {
-        "name": "Mérida",
-        "country": "Mexico",
-        "description": "Known for its Mayan heritage and colonial buildings.",
-        "slug": "merida"
-    },
-    {
-        "name": "León",
-        "country": "Mexico",
-        "description": "Renowned for its leather industry and vibrant culture.",
-        "slug": "leon"
-    },
-    {
-        "name": "Querétaro",
-        "country": "Mexico",
-        "description": "A historical city with a well-preserved colonial center.",
-        "slug": "queretaro"
-    },
-    {
-        "name": "San Luis Potosí",
-        "country": "Mexico",
-        "description": "Known for its rich history and diverse landscapes.",
-        "slug": "san-luis-potosi"
-    },
-    {
-        "name": "Veracruz",
-        "country": "Mexico",
-        "description": "A coastal city with a rich cultural heritage.",
-        "slug": "veracruz"
-    },
-    {
-        "name": "Chihuahua",
-        "country": "Mexico",
-        "description": "Famous for its desert landscapes and indigenous cultures.",
-        "slug": "chihuahua"
-    },
-    {
-        "name": "Toluca",
-        "country": "Mexico",
-        "description": "Known for its colonial architecture and proximity to Mexico City.",
-        "slug": "toluca"
-    },
-    {
-        "name": "Morelia",
-        "country": "Mexico",
-        "description": "A city with a rich colonial history and beautiful architecture.",
-        "slug": "morelia"
-    },
-    {
-        "name": "Acapulco",
-        "country": "Mexico",
-        "description": "A famous beach resort city known for its nightlife.",
-        "slug": "acapulco"
-    },
-    {
-        "name": "Aguascalientes",
-        "country": "Mexico",
-        "description": "Known for its hot springs and cultural festivals.",
-        "slug": "aguascalientes"
-    },
-    {
-        "name": "Saltillo",
-        "country": "Mexico",
-        "description": "A city with a rich history and vibrant arts scene.",
-        "slug": "saltillo"
-    },
-    {
-        "name": "Culiacán",
-        "country": "Mexico",
-        "description": "Known for its agricultural production and cultural festivals.",
-        "slug": "culiacan"
-    },
-    {
-        "name": "Torreón",
-        "country": "Mexico",
-        "description": "An industrial city known for its textile industry.",
-        "slug": "torreon"
-    },
-    {
-        "name": "Durango",
-        "country": "Mexico",
-        "description": "Famous for its colonial architecture and natural beauty.",
-        "slug": "durango"
-    },
-    {
-        "name": "Hermosillo",
-        "country": "Mexico",
-        "description": "The capital of Sonora, known for its desert landscapes.",
-        "slug": "hermosillo"
-    },
-    {
-        "name": "Mazatlán",
-        "country": "Mexico",
-        "description": "A coastal city known for its beaches and seafood.",
-        "slug": "mazatlan"
-    },
-    {
-        "name": "Tepic",
-        "country": "Mexico",
-        "description": "Known for its natural beauty and cultural heritage.",
-        "slug": "tepic"
-    },
-    {
-        "name": "Villahermosa",
-        "country": "Mexico",
-        "description": "The capital of Tabasco, known for its parks and museums.",
-        "slug": "villahermosa"
-    },
-    {
-        "name": "Tuxtla Gutiérrez",
-        "country": "Mexico",
-        "description": "The capital of Chiapas, known for its natural beauty.",
-        "slug": "tuxtla-gutierrez"
-    },
-    {
-        "name": "Chetumal",
-        "country": "Mexico",
-        "description": "A coastal city known for its Mayan heritage.",
-        "slug": "chetumal"
-    },
-    {
-        "name": "La Paz",
-        "country": "Mexico",
-        "description": "The capital of Baja California Sur, known for its beaches.",
-        "slug": "la-paz"
-    },
-    {
-        "name": "San Cristóbal de las Casas",
-        "country": "Mexico",
-        "description": "Known for its indigenous cultures and colonial architecture.",
-        "slug": "san-cristobal-de-las-casas"
-    },
-    {   "name": "Queretaro",
-        "country": "Mexico",
-        "description": "Known for its colonial architecture and vibrant culture.",
-        "slug": "queretaro"
-    },
-    {    "name": "Oaxaca",
-        "country": "Mexico",
-        "description": "Famous for its indigenous cultures and culinary traditions.",
-        "slug": "oaxaca"
-    },
-    {
-        "name": "Hidalgo",
-        "country": "Mexico",
-        "description": "A state with a rich history and diverse culture.",
-        "slug": "hidalgo"
-    }
+    "id": "aguascalientes",
+    "nombre": "Aguascalientes",
+    "estado": "Aguascalientes",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/44/Aeropuerto_Aguascalientes_01.jpg",
+      "https://media-exp1.licdn.com/dms/image/C4D1BAQFwW8uj4-WGiA/company-background_10000/0/1589917155708?e=2147483647&v=beta&t=6rDwP0tr2nX6vgkILQbbKxKLPcsY0BwjgkvIMm-3Vmc"
+    ],
+    "precio_ida": 580,
+    "precio_vuelta": 580,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-aguascalientes"
+  },
+  {
+    "id": "hermosillo",
+    "nombre": "Hermosillo",
+    "estado": "Sonora",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/66/Hermosillo_airport_2013.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-s/14/f8/59/7b/hermosillo-international.jpg"
+    ],
+    "precio_ida": 670,
+    "precio_vuelta": 670,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-hermosillo"
+  },
+  {
+    "id": "veracruz",
+    "nombre": "Veracruz",
+    "estado": "Veracruz",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/Aeropuerto_Veracruz_2016.jpg",
+      "https://www.aviacionnews.com/wp-content/uploads/2018/05/Aeropuerto_Internacional_El_Llano_Veracruz.jpg"
+    ],
+    "precio_ida": 600,
+    "precio_vuelta": 600,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-veracruz"
+  },
+  {
+    "id": "san_luis_potosi",
+    "nombre": "San Luis Potosí",
+    "estado": "San Luis Potosí",
+    "imagenes": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d3/Aeropuerto_Internacional_de_San_Luis_Potos%C3%AD.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-s/0f/b7/c4/ab/aeropuerto-internacional-de-san.jpg"
+    ],
+    "precio_ida": 650,
+    "precio_vuelta": 650,
+    "enlace": "https://www.volaris.com/en-mx/flights-from-felipe-angeles-cdmx-to-san-luis-potosi"
+  }
+
 ]
-=======
-[
-    {
-        "name": "Guadalajara",
-        "country": "Mexico",
-        "description": "Known for its mariachi music and tequila production.",
-        "slug": "guadalajara"
-    },
-    {
-        "name": "Monterrey",
-        "country": "Mexico",
-        "description": "A major industrial hub with a modern skyline.",
-        "slug": "monterrey"
-    },
-    {
-        "name": "Ciudad de México",
-        "country": "Mexico",
-        "description": "A vibrant city with rich history and culture.",
-        "slug": "ciudad-de-mexico"
-    },
-    {
-        "name": "Cancún",
-        "country": "Mexico",
-        "description": "A popular tourist destination known for its beaches and nightlife.",
-        "slug": "cancun"
-    },
-    {
-        "name": "Tijuana",
-        "country": "Mexico",
-        "description": "A border city known for its cultural diversity and nightlife.",
-        "slug": "tijuana"
-    },
-    {
-        "name": "Puebla",
-        "country": "Mexico",
-        "description": "Famous for its culinary heritage and colonial architecture.",
-        "slug": "puebla"
-    },
-    {
-        "name": "Mérida",
-        "country": "Mexico",
-        "description": "Known for its Mayan heritage and colonial buildings.",
-        "slug": "merida"
-    },
-    {
-        "name": "León",
-        "country": "Mexico",
-        "description": "Renowned for its leather industry and vibrant culture.",
-        "slug": "leon"
-    },
-    {
-        "name": "Querétaro",
-        "country": "Mexico",
-        "description": "A historical city with a well-preserved colonial center.",
-        "slug": "queretaro"
-    },
-    {
-        "name": "San Luis Potosí",
-        "country": "Mexico",
-        "description": "Known for its rich history and diverse landscapes.",
-        "slug": "san-luis-potosi"
-    },
-    {
-        "name": "Veracruz",
-        "country": "Mexico",
-        "description": "A coastal city with a rich cultural heritage.",
-        "slug": "veracruz"
-    },
-    {
-        "name": "Chihuahua",
-        "country": "Mexico",
-        "description": "Famous for its desert landscapes and indigenous cultures.",
-        "slug": "chihuahua"
-    },
-    {
-        "name": "Toluca",
-        "country": "Mexico",
-        "description": "Known for its colonial architecture and proximity to Mexico City.",
-        "slug": "toluca"
-    },
-    {
-        "name": "Morelia",
-        "country": "Mexico",
-        "description": "A city with a rich colonial history and beautiful architecture.",
-        "slug": "morelia"
-    },
-    {
-        "name": "Acapulco",
-        "country": "Mexico",
-        "description": "A famous beach resort city known for its nightlife.",
-        "slug": "acapulco"
-    },
-    {
-        "name": "Aguascalientes",
-        "country": "Mexico",
-        "description": "Known for its hot springs and cultural festivals.",
-        "slug": "aguascalientes"
-    },
-    {
-        "name": "Saltillo",
-        "country": "Mexico",
-        "description": "A city with a rich history and vibrant arts scene.",
-        "slug": "saltillo"
-    },
-    {
-        "name": "Culiacán",
-        "country": "Mexico",
-        "description": "Known for its agricultural production and cultural festivals.",
-        "slug": "culiacan"
-    },
-    {
-        "name": "Torreón",
-        "country": "Mexico",
-        "description": "An industrial city known for its textile industry.",
-        "slug": "torreon"
-    },
-    {
-        "name": "Durango",
-        "country": "Mexico",
-        "description": "Famous for its colonial architecture and natural beauty.",
-        "slug": "durango"
-    },
-    {
-        "name": "Hermosillo",
-        "country": "Mexico",
-        "description": "The capital of Sonora, known for its desert landscapes.",
-        "slug": "hermosillo"
-    },
-    {
-        "name": "Mazatlán",
-        "country": "Mexico",
-        "description": "A coastal city known for its beaches and seafood.",
-        "slug": "mazatlan"
-    },
-    {
-        "name": "Tepic",
-        "country": "Mexico",
-        "description": "Known for its natural beauty and cultural heritage.",
-        "slug": "tepic"
-    },
-    {
-        "name": "Villahermosa",
-        "country": "Mexico",
-        "description": "The capital of Tabasco, known for its parks and museums.",
-        "slug": "villahermosa"
-    },
-    {
-        "name": "Tuxtla Gutiérrez",
-        "country": "Mexico",
-        "description": "The capital of Chiapas, known for its natural beauty.",
-        "slug": "tuxtla-gutierrez"
-    },
-    {
-        "name": "Chetumal",
-        "country": "Mexico",
-        "description": "A coastal city known for its Mayan heritage.",
-        "slug": "chetumal"
-    },
-    {
-        "name": "La Paz",
-        "country": "Mexico",
-        "description": "The capital of Baja California Sur, known for its beaches.",
-        "slug": "la-paz"
-    },
-    {
-        "name": "San Cristóbal de las Casas",
-        "country": "Mexico",
-        "description": "Known for its indigenous cultures and colonial architecture.",
-        "slug": "san-cristobal-de-las-casas"
-    },
-    {   "name": "Queretaro",
-        "country": "Mexico",
-        "description": "Known for its colonial architecture and vibrant culture.",
-        "slug": "queretaro"
-    },
-    {    "name": "Oaxaca",
-        "country": "Mexico",
-        "description": "Famous for its indigenous cultures and culinary traditions.",
-        "slug": "oaxaca"
-    },
-    {
-        "name": "Hidalgo",
-        "country": "Mexico",
-        "description": "A state with a rich history and diverse culture.",
-        "slug": "hidalgo"
-    }
-]
->>>>>>> b327c882a0657d81db6a6071791f34401482a7a8
