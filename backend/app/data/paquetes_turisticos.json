@@ -1,0 +1,244 @@
+{
+    "paquetes": [
+        {
+            "id": "PKG-CUN-001",
+            "destino_id": "CUN",
+            "nombre": "Aventura Caribeña en Cancún",
+            "calificacion": 4.8,
+            "precio_paquete": 15999.99,
+            "hotel_nombre": "Hyatt Ziva Cancun",
+            "hotel_enlace": "https://www.hyatt.com/es-ES/hotel/mexico/hyatt-ziva-cancun/cunif",
+            "imagen_paquete": "https://media.istockphoto.com/id/956105474/photo/cancun-beach-with-boat.jpg?s=612x612&w=0&k=20&c=1QmFlW1CZGl2Ye94DZBarVHI5C_sQ24SJqj6REpSdKo=",
+            "itinerario": [
+                {
+                    "dia": 1,
+                    "actividades": [
+                        "Check-in en Hyatt Ziva",
+                        "Tour de bienvenida por el resort",
+                        "Cena en restaurante Tradewinds"
+                    ]
+                },
+                {
+                    "dia": 2,
+                    "actividades": [
+                        "Excursión a Chichén Itzá",
+                        "Visita al cenote Ik Kil",
+                        "Cena mexicana temática"
+                    ]
+                },
+                {
+                    "dia": 3,
+                    "actividades": [
+                        "Tour a Isla Mujeres en catamarán",
+                        "Snorkel en arrecife",
+                        "Tiempo libre en playa Norte"
+                    ]
+                },
+                {
+                    "dia": 4,
+                    "actividades": [
+                        "Día completo en Xcaret",
+                        "Espectáculo nocturno",
+                        "Cena en el parque"
+                    ]
+                },
+                {
+                    "dia": 5,
+                    "actividades": [
+                        "Día libre en resort",
+                        "Masaje incluido en spa",
+                        "Cena de despedida"
+                    ]
+                },
+                {
+                    "dia": 6,
+                    "actividades": [
+                        "Desayuno buffet",
+                        "Check-out y traslado"
+                    ]
+                }
+            ],
+            "disponible": true
+        },
+        {
+            "id": "PKG-CSL-001",
+            "destino_id": "CSL",
+            "nombre": "Lujo en Los Cabos",
+            "calificacion": 4.7,
+            "precio_paquete": 18999.99,
+            "hotel_nombre": "Waldorf Astoria Los Cabos Pedregal",
+            "hotel_enlace": "https://www.waldorfastorialoscabospedregal.com/es/",
+            "imagen_paquete": "https://villacdn.villagroupresorts.com/uploads/photo/image/13855/los_cabos.jpg",
+            "itinerario": [
+                {
+                    "dia": 1,
+                    "actividades": [
+                        "Traslado privado del aeropuerto",
+                        "Check-in con copa de champagne",
+                        "Cena en El Farallon"
+                    ]
+                },
+                {
+                    "dia": 2,
+                    "actividades": [
+                        "Tour al Arco y Playa del Amor",
+                        "Snorkel en Bahía Santa María",
+                        "Sunset sailing"
+                    ]
+                },
+                {
+                    "dia": 3,
+                    "actividades": [
+                        "Día de spa",
+                        "Clase de cocina mexicana",
+                        "Cena en Don Manuel's"
+                    ]
+                },
+                {
+                    "dia": 4,
+                    "actividades": [
+                        "Tour a Valle de Guadalupe",
+                        "Cata de vinos",
+                        "Cena maridaje"
+                    ]
+                },
+                {
+                    "dia": 5,
+                    "actividades": [
+                        "Pesca deportiva",
+                        "Tarde libre",
+                        "Cena romántica en playa"
+                    ]
+                },
+                {
+                    "dia": 6,
+                    "actividades": [
+                        "Desayuno en la terraza",
+                        "Check-out y traslado"
+                    ]
+                }
+            ],
+            "disponible": true
+        },
+        {
+            "id": "PKG-PVR-001",
+            "destino_id": "PVR",
+            "nombre": "Encanto de Puerto Vallarta",
+            "calificacion": 4.6,
+            "precio_paquete": 14999.99,
+            "hotel_nombre": "Secrets Vallarta Bay Puerto Vallarta",
+            "hotel_enlace": "https://www.hyatt.com/es-ES/home/",
+            "imagen_paquete": "https://visitpuertovallarta.com/uploads/123/melecon-de-puerto-vallarta-movil.jpg",
+            "itinerario": [
+                {
+                    "dia": 1,
+                    "actividades": [
+                        "Check-in en Secrets Vallarta Bay",
+                        "Tour por el malecón",
+                        "Cena en La Leche Restaurant"
+                    ]
+                },
+                {
+                    "dia": 2,
+                    "actividades": [
+                        "Tour a Islas Marietas",
+                        "Snorkel en Playa Escondida",
+                        "Cena en el resort"
+                    ]
+                },
+                {
+                    "dia": 3,
+                    "actividades": [
+                        "Aventura en Sierra Madre",
+                        "Visita a pueblo El Tuito",
+                        "Cena mexicana con show"
+                    ]
+                },
+                {
+                    "dia": 4,
+                    "actividades": [
+                        "Tour a Sayulita",
+                        "Clase de surf",
+                        "Cena en playa"
+                    ]
+                },
+                {
+                    "dia": 5,
+                    "actividades": [
+                        "Día de spa",
+                        "Paseo en velero al atardecer",
+                        "Cena romántica"
+                    ]
+                },
+                {
+                    "dia": 6,
+                    "actividades": [
+                        "Desayuno buffet",
+                        "Check-out y traslado"
+                    ]
+                }
+            ],
+            "disponible": true
+        },
+        {
+            "id": "PKG-MID-001",
+            "destino_id": "MID",
+            "nombre": "Magia Colonial en Mérida",
+            "calificacion": 4.9,
+            "precio_paquete": 13999.99,
+            "hotel_nombre": "Rosas & Xocolate Boutique Hotel",
+            "hotel_enlace": "https://www.booking.com/searchresults.es.html?aid=2405612&label=brave_nonbrand_hotel_mx_cb262c46-2315-4408-8e55-20cb194d80bb_7b1024&highlighted_hotels=2602455&redirected=1&city=-1683102&hlrd=no_dates&source=hotel&expand_sb=1&keep_landing=1&sid=0f92aa4236d0cc45d18f5b084234fd19",
+            "imagen_paquete": "https://media.gettyimages.com/id/183423342/es/foto/hacienda-yaxcopoil.jpg?s=612x612&w=0&k=20&c=NWtCW_nWeB1XyFFSjwqDJ0uyZR8JsEnL9Or-jhY8IZA=",
+            "itinerario": [
+                {
+                    "dia": 1,
+                    "actividades": [
+                        "Check-in en Rosas & Xocolate",
+                        "Tour histórico por centro",
+                        "Cena en Kuuk Restaurant"
+                    ]
+                },
+                {
+                    "dia": 2,
+                    "actividades": [
+                        "Visita a Uxmal",
+                        "Tour por Hacienda Yaxcopoil",
+                        "Cena en hotel"
+                    ]
+                },
+                {
+                    "dia": 3,
+                    "actividades": [
+                        "Ruta de Cenotes",
+                        "Clase de cocina yucateca",
+                        "Cena tradicional"
+                    ]
+                },
+                {
+                    "dia": 4,
+                    "actividades": [
+                        "Visita a Izamal",
+                        "Taller artesanal",
+                        "Show de jarana yucateca"
+                    ]
+                },
+                {
+                    "dia": 5,
+                    "actividades": [
+                        "Tour a Celestún",
+                        "Avistamiento de flamencos",
+                        "Cena de despedida"
+                    ]
+                },
+                {
+                    "dia": 6,
+                    "actividades": [
+                        "Desayuno típico yucateco",
+                        "Check-out y traslado"
+                    ]
+                }
+            ],
+            "disponible": true
+        }
+    ]
+}

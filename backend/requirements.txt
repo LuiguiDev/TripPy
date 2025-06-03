@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-fastapi
-=======
-fastapi
->>>>>>> b327c882a0657d81db6a6071791f34401482a7a8
-uvicorn
+fastapi>=0.68.0,<0.69.0
+uvicorn>=0.15.0,<0.16.0
+pydantic>=1.8.0,<2.0.0
+python-multipart>=0.0.5
