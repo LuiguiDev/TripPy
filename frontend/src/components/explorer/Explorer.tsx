@@ -1,85 +1,12 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Search, Filter, MapPin, Star, Calendar, Users, Plane } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { Search, Filter, MapPin, Calendar, Users, Plane } from 'lucide-react';
 import { getDestinations } from '../../services/api';
 
-// Datos mockeados
-const mockDestinations = [
-  {
-    id: 1,
-    name: "Playa del Carmen",
-    region: "Caribe Mexicano",
-    type: "playa",
-    price: 2500,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?w=800&h=600&fit=crop",
-    description: "Paraíso caribeño con cenotes y ruinas mayas",
-    duration: "4-7 días",
-    highlights: ["Cenotes cristalinos", "Ruinas de Tulum", "Vida nocturna"]
-  },
-  {
-    id: 2,
-    name: "San Miguel de Allende",
-    region: "Bajío",
-    type: "cultura",
-    price: 1800,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=800&h=600&fit=crop",
-    description: "Ciudad colonial llena de arte y tradición",
-    duration: "3-5 días",
-    highlights: ["Arquitectura colonial", "Gastronomía", "Artesanías"]
-  },
-  {
-    id: 3,
-    name: "Pico de Orizaba",
-    region: "Veracruz",
-    type: "montaña",
-    price: 3200,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-    description: "La montaña más alta de México para aventureros",
-    duration: "5-8 días",
-    highlights: ["Ascenso al pico", "Bosques de niebla", "Aventura extrema"]
-  },
-  {
-    id: 4,
-    name: "Oaxaca de Juárez",
-    region: "Sur",
-    type: "cultura",
-    price: 2200,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&h=600&fit=crop",
-    description: "Capital gastronómica y cultural de México",
-    duration: "4-6 días",
-    highlights: ["Mezcal auténtico", "Monte Albán", "Mercados tradicionales"]
-  },
-  {
-    id: 5,
-    name: "Holbox",
-    region: "Caribe Mexicano",
-    type: "playa",
-    price: 3500,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
-    description: "Isla virgen con tiburones ballena",
-    duration: "3-5 días",
-    highlights: ["Tiburones ballena", "Playa virgen", "Tranquilidad total"]
-  },
-  {
-    id: 6,
-    name: "Pueblo Mágico de Bacalar",
-    region: "Caribe Mexicano",
-    type: "naturaleza",
-    price: 2800,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
-    description: "La laguna de los siete colores",
-    duration: "3-4 días",
-    highlights: ["Laguna multicolor", "Kayak", "Cenotes cercanos"]
-  }
-];
-
 const data = await getDestinations()
-const destinations = data.destinations
+const destinations = data
+
+console.log(data);
+
 
 
 const regions = ["Todas", "Caribe Mexicano", "Bajío", "Veracruz", "Sur"];
@@ -117,7 +44,7 @@ function Explorer() {
     
   }, [searchTerm])
 
-  const filteredDestinations = useMemo(() => {
+/*   const filteredDestinations = useMemo(() => {
     return destinations.filter(destination => {
       const matchesSearch = destination.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            destination.descripcion.toLowerCase().includes(searchTerm.toLowerCase());
@@ -128,8 +55,8 @@ function Explorer() {
       return matchesSearch && matchesRegion && matchesPrice;
     });
   }, [searchTerm, selectedRegion, selectedType, selectedPriceRange]);
-
-  const getTypeColor = (type) => {
+ */
+/*   const getTypeColor = (type:string) => {
     const colors = {
       playa: "bg-blue-100 text-blue-800",
       cultura: "bg-purple-100 text-purple-800",
@@ -138,7 +65,7 @@ function Explorer() {
     };
     return colors[type] || "bg-gray-100 text-gray-800";
   };
-
+ */
   const targetRef = useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
@@ -355,7 +282,7 @@ function Explorer() {
           ))}
         </div>
 
-        {filteredDestinations.length === 0 && (
+        {data.length === 0 && (
           <div className="text-center py-20">
             <div className="text-6xl mb-4">🌵</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">No encontramos destinos</h3>

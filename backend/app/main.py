@@ -22,13 +22,23 @@ La API provee acceso a:
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import destinations
+# Importación de modelos de datos
+from app.models.destination import (
+    Destino,
+    PaqueteTuristico,
+    BusquedaDestino,  
+    RespuestaDestino  
+)
 
+# Configuración de seguridad adicional
 ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Frontend en desarrollo
     "http://localhost:3000",  # Frontend alternativo
     "https://trippy.mx"      # Producción (ejemplo)
 ]
 
+# Inicialización única de FastAPI
+# esto permite evitar problemas de importación circular
 app = FastAPI(
     title="TripPy API",
     description="""
@@ -47,28 +57,72 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
-    allow_methods=["GET", "POST"],# Métodos permitidos
+    allow_methods=["GET", "POST"],  # Métodos permitidos
     allow_headers=["*"],
     max_age=100  # Tiempo de cache para preflight requests o en español, solicitudes de pre-vuelo
 )
 
-# Incluir rutas
-app.include_router(destinations.router, prefix="/api", tags=["Destinations"])
+# Incluir rutas de la aplicación
+#permite organizar las rutas en módulos separados
+app.include_router(
+    destinations.router, 
+    prefix="/api", 
+    tags=["Destinos y Paquetes"]
+)
 
 # Incluir otros routers si es necesario
 #permite agregar más módulos de rutas
 @app.get("/")
 def root():
+    """
+    Endpoint raíz que muestra la documentación de la API.
+    """
     return {
-        "message": "Welcome to TripPy API - Descubre México",
-        "version": "1.0.0",
+        "mensaje": "Bienvenido a TripPy API - Descubre México",
+        "version": "2.0.0",
         "endpoints": {
-            "destinations": "/api/explorer",
-            "destination_details": "/api/details/{slug}",
-            "docs": "/docs"
+            # Destinos
+            "destinos": "/api/destinos",
+            "detalle_destino": "/api/destinos/{destino_id}",
+            # Paquetes
+            "paquetes": "/api/paquetes",
+            "detalle_paquete": "/api/paquetes/{paquete_id}",
+            "buscar_paquetes": "/api/paquetes/buscar",
+            "estadisticas_paquetes": "/api/estadisticas/paquetes",
+            "paquetes_por_destino": "/api/destinos/{destino_id}/paquetes",
+            "paquetes_mejor_valorados": "/api/paquetes/mejor-valorados",
+            "paquetes_por_precio": "/api/paquetes/por-precio",
+            # Documentación
+            "documentacion": "/docs",
+            "documentacion_alt": "/redoc"
         }
     }
 
+#esto sirve para verificar que la API está activa
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "service": "TripPy API"}
+    """
+    Verificación del estado de la API.
+    """
+    return {
+        "estado": "activo",
+        "servicio": "TripPy API",
+        "version": "2.0.0",
+        "funcionalidades": [
+            "destinos",
+            "paquetes",
+            "busqueda",
+            "estadisticas"
+        ],
+        "endpoints_disponibles": True
+    }
+
+# Manejador de excepciones globales para errores no controlados
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request, exc):
+    """Manejador personalizado de excepciones HTTP."""
+    return {
+        "error": True,
+        "mensaje": exc.detail,
+        "codigo": exc.status_code
+    }

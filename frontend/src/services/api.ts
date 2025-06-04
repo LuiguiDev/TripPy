@@ -15,10 +15,6 @@ export interface Destination {
   enlace: string;
 }
 
-interface ResType {
-  total: number
-  destinations: Destination[]
-}
 
 const fetchFromApi = async <T>(endpoint: string): Promise<T> => {
   try {
@@ -36,11 +32,7 @@ const fetchFromApi = async <T>(endpoint: string): Promise<T> => {
 };
 
 // Obtener todas las destinaciones
-export const getDestinations = (): Promise<ResType> => {
-  return fetchFromApi<ResType>('/explorer');
+export const getDestinations = (): Promise<Destination[]> => {
+  return fetchFromApi<Destination[]>('/destinos');
 };
 
-// Obtener destino por slug
-export const getDestinationBySlug = (slug: string): Promise<ResType> => {
-  return fetchFromApi<ResType>(`/details/${slug}`);
-};
