@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Search, Filter, MapPin, Star, Calendar, Users, Plane } from 'lucide-react';
 import { getDestinations } from '../../services/api';
 
@@ -79,8 +79,7 @@ const mockDestinations = [
 ];
 
 const data = await getDestinations()
-
-console.log(data);
+const destinations = data.destinations
 
 
 const regions = ["Todas", "Caribe Mexicano", "Bajío", "Veracruz", "Sur"];
@@ -99,16 +98,34 @@ function Explorer() {
   const [selectedPriceRange, setSelectedPriceRange] = useState(0);
   const [showFilters, setShowFilters] = useState(false);
 
+  const [data , setData] = useState(destinations)
+
+  const [showHeader, setShowHeader] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  function filterByName(name: string) {
+    if (name == '') {
+      return destinations
+    } 
+    return destinations.filter(d => 
+      d.nombre.toLowerCase().includes(name.toLowerCase()) ||
+      d.descripcion.toLowerCase().includes(name.toLowerCase())
+    );
+}
+  useEffect(() => {
+    setData(filterByName(searchTerm))
+    
+  }, [searchTerm])
+
   const filteredDestinations = useMemo(() => {
-    return mockDestinations.filter(destination => {
-      const matchesSearch = destination.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           destination.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesRegion = selectedRegion === "Todas" || destination.region === selectedRegion;
-      const matchesType = selectedType === "Todos" || destination.type === selectedType;
+    return destinations.filter(destination => {
+      const matchesSearch = destination.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           destination.descripcion.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesRegion = selectedRegion === "Todas" || destination.estado === selectedRegion;
       const priceRange = priceRanges[selectedPriceRange];
-      const matchesPrice = destination.price >= priceRange.min && destination.price <= priceRange.max;
+      const matchesPrice = destination.precio_ida >= priceRange.min && destination.precio_ida <= priceRange.max;
       
-      return matchesSearch && matchesRegion && matchesType && matchesPrice;
+      return matchesSearch && matchesRegion && matchesPrice;
     });
   }, [searchTerm, selectedRegion, selectedType, selectedPriceRange]);
 
@@ -122,10 +139,46 @@ function Explorer() {
     return colors[type] || "bg-gray-100 text-gray-800";
   };
 
+  const targetRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScroll = () => {
+    if (targetRef.current) {
+    window.scrollTo({
+      top: targetRef.current.offsetTop + 500,
+      behavior: 'smooth',
+    });
+  }
+  };
+
+   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scroll hacia abajo
+        setShowHeader(false);
+      } else {
+        // Scroll hacia arriba
+        setShowHeader(true);
+      }
+
+      setLastScrollY(currentScrollY);      
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-orange-200 sticky top-0 z-50">
+      <header 
+        style={{
+          transition: 'transform 0.3s ease',
+          transform: showHeader ? 'translateY(0)' : 'translateY(-100%)',
+        }}
+        className="bg-transparent backdrop-blur-md fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -135,181 +188,162 @@ function Explorer() {
               </h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">Destinos</a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">Experiencias</a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">Paquetes</a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 font-medium transition-colors">Contacto</a>
+              <a href="#" className="text-white hover:text-orange-600 font-medium transition-colors">Destinos</a>
+              <a href="#" className="text-white hover:text-orange-600 font-medium transition-colors">Experiencias</a>
+              <a href="#" className="text-white hover:text-orange-600 font-medium transition-colors">Paquetes</a>
+              <a href="#" className="text-white hover:text-orange-600 font-medium transition-colors">Contacto</a>
             </nav>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Descubre el
-            <span className="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent block">
-              México Auténtico
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+      <section className="relative bg-black">
+        <video className='opacity-60' autoPlay={true} loop={true}>
+          <source src='./video.mp4'/>
+          
+        </video>
+        <div className="w-full mx-auto text-center absolute top-20 px-20">
+          <div className='w-full flex justify-center gap-6'>
+            <h2 className="text-6xl font-bold text-white mb-3 flex">
+              Descubre el 
+            </h2>
+            <h2 className='text-6xl font-bold'>
+              <span className="bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 bg-clip-text text-transparent block">
+                México Auténtico
+              </span>
+            </h2>
+          </div>
+          <p className="text-xl text-white mb-8 w-full mx-auto">
             Explora destinos únicos, vive experiencias locales y crea recuerdos inolvidables en el corazón de México
           </p>
         </div>
+
+        <section className="w-full sm:px-6 lg:px-20 mb-12 absolute bottom-0">
+          <div className="flex bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
+            {/* Search Bar */}
+            <div className="relative w-full" ref={targetRef}>
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+              <input
+                type="text"
+                placeholder="Busca tu próximo destino..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onClick={handleScroll}
+                className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-transparent text-lg bg-white/80"
+                
+              />
+            </div>
+
+            {/* Filter Toggle */}
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="w-50 px-8 flex items-center space-x-2 text-orange-600 font-medium mb-4 hover:text-orange-700 transition-colors"
+            >
+              <Filter className="h-5 w-5" />
+              <span>{showFilters ? 'Ocultar filtros' : 'Mostrar filtros'}</span>
+            </button>
+
+            {/* Filters */}
+            {showFilters && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-gray-200">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Región</label>
+                  <select
+                    value={selectedRegion}
+                    onChange={(e) => setSelectedRegion(e.target.value)}
+                    className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 bg-white"
+                  >
+                    {regions.map(region => (
+                      <option key={region} value={region}>{region}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Tipo</label>
+                  <select
+                    value={selectedType}
+                    onChange={(e) => setSelectedType(e.target.value)}
+                    className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 bg-white"
+                  >
+                    {types.map(type => (
+                      <option key={type} value={type}>{type.charAt(0).toUpperCase() + type.slice(1)}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Precio</label>
+                  <select
+                    value={selectedPriceRange}
+                    onChange={(e) => setSelectedPriceRange(Number(e.target.value))}
+                    className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 bg-white"
+                  >
+                    {priceRanges.map((range, index) => (
+                      <option key={index} value={index}>{range.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
       </section>
 
       {/* Search and Filters */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
-          {/* Search Bar */}
-          <div className="relative mb-6">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-            <input
-              type="text"
-              placeholder="Busca tu próximo destino..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-transparent text-lg bg-white/80"
-            />
-          </div>
-
-          {/* Filter Toggle */}
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center space-x-2 text-orange-600 font-medium mb-4 hover:text-orange-700 transition-colors"
-          >
-            <Filter className="h-5 w-5" />
-            <span>{showFilters ? 'Ocultar filtros' : 'Mostrar filtros'}</span>
-          </button>
-
-          {/* Filters */}
-          {showFilters && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-gray-200">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Región</label>
-                <select
-                  value={selectedRegion}
-                  onChange={(e) => setSelectedRegion(e.target.value)}
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 bg-white"
-                >
-                  {regions.map(region => (
-                    <option key={region} value={region}>{region}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Tipo</label>
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 bg-white"
-                >
-                  {types.map(type => (
-                    <option key={type} value={type}>{type.charAt(0).toUpperCase() + type.slice(1)}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Precio</label>
-                <select
-                  value={selectedPriceRange}
-                  onChange={(e) => setSelectedPriceRange(Number(e.target.value))}
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 bg-white"
-                >
-                  {priceRanges.map((range, index) => (
-                    <option key={index} value={index}>{range.label}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* Results Counter */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+{/*       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <p className="text-gray-600 text-lg">
           {filteredDestinations.length} destino{filteredDestinations.length !== 1 ? 's' : ''} encontrado{filteredDestinations.length !== 1 ? 's' : ''}
         </p>
       </section>
-
+ */}
       {/* Destinations Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {filteredDestinations.map((destination) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8">
+          {data.map((destination) => (
             <div
               key={destination.id}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
             >
               <div className="relative overflow-hidden">
                 <img
-                  src={destination.image}
-                  alt={destination.name}
+                  src={destination.imagenes[0]}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getTypeColor(destination.type)}`}>
-                    {destination.type.charAt(0).toUpperCase() + destination.type.slice(1)}
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                  <div className="flex items-center space-x-1">
-                    <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                    <span className="text-sm font-medium">{destination.rating}</span>
-                  </div>
-                </div>
               </div>
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">
-                      {destination.name}
+                      {destination.nombre}
                     </h3>
                     <div className="flex items-center text-gray-500 text-sm">
                       <MapPin className="h-4 w-4 mr-1" />
-                      {destination.region}
+                      {destination.estado}
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-orange-600">
-                      ${destination.price.toLocaleString()}
+                      ${destination.precio_ida + destination.precio_vuelta}
                     </div>
                     <div className="text-sm text-gray-500">MXN por persona</div>
                   </div>
                 </div>
 
                 <p className="text-gray-600 mb-4 line-clamp-2">
-                  {destination.description}
+                  {destination.descripcion}
                 </p>
 
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center text-sm text-gray-500">
                     <Calendar className="h-4 w-4 mr-1" />
-                    {destination.duration}
                   </div>
                   <div className="flex items-center text-sm text-gray-500">
                     <Users className="h-4 w-4 mr-1" />
                     Grupos pequeños
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {destination.highlights.slice(0, 2).map((highlight, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-orange-50 text-orange-700 text-xs rounded-full"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
-                    {destination.highlights.length > 2 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                        +{destination.highlights.length - 2} más
-                      </span>
-                    )}
                   </div>
                 </div>
 

@@ -2,10 +2,22 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 
 export interface Destination {
-  name: string;
-  country: string;
-  description: string;
+  id: string;
+  nombre: string;
+  codigo_iata: string;
   slug: string;
+  estado: string;
+  descripcion: string;
+  imagenes: string[];
+  precio_ida: number;
+  precio_vuelta: number;
+  precio_por_día: number,
+  enlace: string;
+}
+
+interface ResType {
+  total: number
+  destinations: Destination[]
 }
 
 const fetchFromApi = async <T>(endpoint: string): Promise<T> => {
@@ -24,11 +36,11 @@ const fetchFromApi = async <T>(endpoint: string): Promise<T> => {
 };
 
 // Obtener todas las destinaciones
-export const getDestinations = (): Promise<Destination[]> => {
-  return fetchFromApi<Destination[]>('/explorer');
+export const getDestinations = (): Promise<ResType> => {
+  return fetchFromApi<ResType>('/explorer');
 };
 
 // Obtener destino por slug
-export const getDestinationBySlug = (slug: string): Promise<Destination> => {
-  return fetchFromApi<Destination>(`/details/${slug}`);
+export const getDestinationBySlug = (slug: string): Promise<ResType> => {
+  return fetchFromApi<ResType>(`/details/${slug}`);
 };
